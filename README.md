@@ -33,7 +33,6 @@ SwiftyLogger is designed to be as simple as possible. You can use the shared sin
 ```swift
 import SwiftyLogger
 
-// Log a simple debug message using the shared instance
 SwiftyLogger.shared.log("This is a debug message.")
 ```
 
@@ -44,11 +43,8 @@ SwiftyLogger.shared.log("This is a debug message.")
 Use the `logAsync` method when calling from an `async` context. This is the preferred method as it directly communicates with the actor.
 
 ```swift
-// usage
 class MyAsyncClass {
-    // This is an async method
     func testAsync() async {
-        // Use `await` to log the message
         await SwiftyLogger.shared.logAsync("This is an asynchronous log message.", level: .debug)
     }
 }
@@ -61,9 +57,7 @@ class MyAsyncClass {
 Use the `log` method when you need to log from a non-isolated, synchronous context. This method internally creates a `Task` to safely hand the message off to the actor without blocking the caller's thread.
 
 ```swift
-// usage
 class MySyncClass {
-    // This is a synchronous method
     func testNonIsolated() {
         // Use the synchronous log method, which doesn't require `await`
         SwiftyLogger.shared.log("This is a synchronous log message.", level: .debug)
@@ -107,7 +101,6 @@ You can specify a logging level using `OSLogType` to control the severity of you
 import SwiftyLogger
 import os.log
 
-// Log with different severity levels
 SwiftyLogger.shared.log("An informational message.", level: .info)
 SwiftyLogger.shared.log("Something went wrong.", level: .error)
 SwiftyLogger.shared.log("A critical system failure.", level: .fault)
