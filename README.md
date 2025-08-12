@@ -18,7 +18,7 @@ Add this package to your project using Xcode's Swift Package Manager.
 
 ```
 dependencies: [
-    .package(url: "https://github.com/your-repo/SwiftyLogger.git", from: "1.0.0")
+    .package(url: "https://github.com/Shalini-papegowda/SwiftyLogger.git", from: "1.0.0")
 ]
 ```
 
