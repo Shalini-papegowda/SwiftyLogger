@@ -17,7 +17,9 @@ A simple, thread-safe logging utility for Swift, built on top of Apple's `os.Log
 Add this package to your project using Xcode's Swift Package Manager.
 
 ```
-https://github.com/your-username/SwiftyLogger.git
+dependencies: [
+    .package(url: "https://github.com/your-repo/SwiftyLogger.git", from: "1.0.0")
+]
 ```
 
 -----
